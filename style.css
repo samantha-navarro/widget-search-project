@@ -27,11 +27,13 @@ body {
   padding: 15px;
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease;
+  transition: width 0.3s ease;
+  /* the width will keep the transition running smoothly */
 }
 
 .btn {
   background-color: white;
+  color: #a89db6;
   border: 0;
   font-size: 24px;
   height: 50px;
@@ -41,4 +43,19 @@ body {
   left: 0;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+
+.search.active .input {
+  width: 200px;
+  /* then toggled the width will expand to 200px */
+}
+
+.search.active .btn {
+  transform: translateX(198px);
+  /* this shows where the button will be placed when active toggle is clicked */
 }
